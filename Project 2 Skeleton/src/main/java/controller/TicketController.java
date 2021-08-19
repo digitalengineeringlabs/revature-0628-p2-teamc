@@ -17,7 +17,7 @@ import manager.TicketManager;
 import model.Ticket;
 
 @RestController
-@RequestMapping(path="/accounts")
+@RequestMapping(path="/tickets")
 public class TicketController {
 	
 	@Autowired

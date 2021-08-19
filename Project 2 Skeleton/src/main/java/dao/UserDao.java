@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import model.User;
-import model.GenderSalary;
 
 public interface UserDao extends JpaRepository<User, Integer> {
 	
