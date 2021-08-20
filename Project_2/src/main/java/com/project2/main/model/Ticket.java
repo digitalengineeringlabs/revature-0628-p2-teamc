@@ -9,36 +9,37 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-@Entity
+@Entity (name = "tickets")
 public class Ticket {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
-    @SequenceGenerator(name="id_generator", sequenceName = "employee_id_seq", allocationSize = 1)
+    @SequenceGenerator(name="id_generator", sequenceName = "tickets_ticketnumber_seq", allocationSize = 1)
 	private int ticketnumber;
 	@Column
 	private int user_id;
 	@Column
 	private String tickettype;
 	@Column
-	private double ticketvalue;
+	private float ticketvalue;
 	@Column
 	private String ticketcomments;
 	@Column
 	private Date ticketdate;
 	@Column
-	private String ticketstatus;
+	private String status;
 	
 	public Ticket() {
 		super();
 	}
 	
-	public Ticket(int user_id, String tickettype, double ticketvalue, String ticketcomments) {
+	public Ticket(int user_id, String tickettype, float ticketvalue, String ticketcomments) {
 		super();
 		this.user_id = user_id;
 		this.tickettype = tickettype;
 		this.ticketvalue = ticketvalue;
 		this.ticketcomments = ticketcomments;
+		this.status = "Pending";
 	}
 	public int getUser_id() {
 		return user_id;
@@ -61,7 +62,7 @@ public class Ticket {
 	public double getTicketvalue() {
 		return ticketvalue;
 	}
-	public void setTicketvalue(double ticketvalue) {
+	public void setTicketvalue(float ticketvalue) {
 		this.ticketvalue = ticketvalue;
 	}
 	public String getTicketcomments() {
@@ -76,11 +77,11 @@ public class Ticket {
 	public void setTicketdate(Date ticketdate) {
 		this.ticketdate = ticketdate;
 	}
-	public String getTicketstatus() {
-		return ticketstatus;
+	public String getStatus() {
+		return status;
 	}
-	public void setTicketstatus(String ticketstatus) {
-		this.ticketstatus = ticketstatus;
+	public void setStatus(String ticketstatus) {
+		this.status = ticketstatus;
 	}
 	
 	
