@@ -1,4 +1,4 @@
-package com.project_2.main.controller;
+package com.project2.main.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project_2.main.manager.TicketManager;
-import com.project_2.main.model.Ticket;
+import com.project2.main.manager.TicketManager;
+import com.project2.main.model.Ticket;
 
 @RestController
 @RequestMapping(path="/ticket")

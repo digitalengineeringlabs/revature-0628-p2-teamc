@@ -1,4 +1,4 @@
-package com.project_2.main;
+package com.project2.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
