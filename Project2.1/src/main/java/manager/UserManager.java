@@ -1,6 +1,5 @@
 package manager;
 
-import java.util.List;
 
 import model.User;
 
