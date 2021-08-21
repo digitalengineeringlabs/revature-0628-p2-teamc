@@ -1,7 +1,7 @@
 package com.project2.main.model;
 
-import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,8 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
 @Entity (name = "tickets")
-public class Ticket {
+public class Ticket extends Auditable<String>{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
@@ -25,8 +29,10 @@ public class Ticket {
 	private float ticketvalue;
 	@Column
 	private String ticketcomments;
+	
+	@CreatedDate
 	@Column
-	private LocalDate ticketdate;
+	private Date ticketdate;
 	@Column
 	private String status;
 	
@@ -42,7 +48,6 @@ public class Ticket {
 		this.ticketvalue = ticketvalue;
 		this.ticketcomments = ticketcomments;
 		this.status = "Pending";
-		this.ticketdate = LocalDate.now();
 	}
 	public int getUser_id() {
 		return user_id;
@@ -74,10 +79,10 @@ public class Ticket {
 	public void setTicketcomments(String ticketcomments) {
 		this.ticketcomments = ticketcomments;
 	}
-	public LocalDate getTicketdate() {
+	public Date getTicketdate() {
 		return ticketdate;
 	}
-	public void setTicketdate(LocalDate ticketdate) {
+	public void setTicketdate(Date ticketdate) {
 		this.ticketdate = ticketdate;
 	}
 	public String getStatus() {
