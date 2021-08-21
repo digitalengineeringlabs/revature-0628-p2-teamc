@@ -14,7 +14,9 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
     @SequenceGenerator(name="id_generator", sequenceName = "userlogin_id_seq", allocationSize = 1)
-	private int user_id;
+	
+	@Column(name = "user_id")
+	private int userid;
 	
 	@Column
 	private String username;
@@ -34,10 +36,10 @@ public class User {
 		this.manager = manager;
 	}
 	public int getUser_id() {
-		return user_id;
+		return userid;
 	}
 	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+		this.userid = user_id;
 	}
 	public String getUsername() {
 		return username;
