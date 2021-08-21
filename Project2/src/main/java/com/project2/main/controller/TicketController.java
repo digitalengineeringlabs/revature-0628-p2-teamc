@@ -24,7 +24,7 @@ public class TicketController {
 		return  manager.create(t);
 	}
 	@GetMapping(produces="application/json")
-	public List<Ticket> findAll(){
-		return null;
+	public List<Ticket> getAllTickets(){
+		return manager.findAll();
 	}
 }
