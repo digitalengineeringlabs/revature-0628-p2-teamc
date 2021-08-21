@@ -1,6 +1,7 @@
 package com.project2.main.model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ public class Ticket {
 	@Column
 	private String ticketcomments;
 	@Column
-	private Date ticketdate;
+	private LocalDate ticketdate;
 	@Column
 	private String status;
 	
@@ -35,11 +36,13 @@ public class Ticket {
 	
 	public Ticket(int user_id, String tickettype, float ticketvalue, String ticketcomments) {
 		super();
+
 		this.user_id = user_id;
 		this.tickettype = tickettype;
 		this.ticketvalue = ticketvalue;
 		this.ticketcomments = ticketcomments;
 		this.status = "Pending";
+		this.ticketdate = LocalDate.now();
 	}
 	public int getUser_id() {
 		return user_id;
@@ -71,10 +74,10 @@ public class Ticket {
 	public void setTicketcomments(String ticketcomments) {
 		this.ticketcomments = ticketcomments;
 	}
-	public Date getTicketdate() {
+	public LocalDate getTicketdate() {
 		return ticketdate;
 	}
-	public void setTicketdate(Date ticketdate) {
+	public void setTicketdate(LocalDate ticketdate) {
 		this.ticketdate = ticketdate;
 	}
 	public String getStatus() {
