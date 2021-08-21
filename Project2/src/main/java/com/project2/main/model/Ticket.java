@@ -1,6 +1,5 @@
 package com.project2.main.model;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,9 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @Entity (name = "tickets")
 public class Ticket extends Auditable<String>{
@@ -21,8 +18,8 @@ public class Ticket extends Auditable<String>{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
     @SequenceGenerator(name="id_generator", sequenceName = "tickets_ticketnumber_seq", allocationSize = 1)
 	private int ticketnumber;
-	@Column
-	private int user_id;
+	@Column(name = "user_id")
+	private int userid;
 	@Column
 	private String tickettype;
 	@Column
@@ -40,20 +37,20 @@ public class Ticket extends Auditable<String>{
 		super();
 	}
 	
-	public Ticket(int user_id, String tickettype, float ticketvalue, String ticketcomments) {
+	public Ticket(int userid, String tickettype, float ticketvalue, String ticketcomments) {
 		super();
 
-		this.user_id = user_id;
+		this.userid = userid;
 		this.tickettype = tickettype;
 		this.ticketvalue = ticketvalue;
 		this.ticketcomments = ticketcomments;
 		this.status = "Pending";
 	}
 	public int getUser_id() {
-		return user_id;
+		return userid;
 	}
 	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+		this.userid = user_id;
 	}
 	public int getTicketnumber() {
 		return ticketnumber;
