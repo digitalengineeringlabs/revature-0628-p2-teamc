@@ -1,20 +1,20 @@
 package com.project2.main.model;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import java.util.Date;
 
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import java.util.Date;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U> {
 
+	//Feel free to use the commented code below.  If any is still commented by final product, delete the commented ones
+	
 //    @CreatedBy
 //    protected U createdBy;
 
