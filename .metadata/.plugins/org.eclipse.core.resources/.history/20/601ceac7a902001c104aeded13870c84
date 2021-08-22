@@ -1,0 +1,9 @@
+package com.rev.manager;
+
+import com.rev.model.User;
+
+public interface UserManager {
+	
+	User create(User u);
+
+}

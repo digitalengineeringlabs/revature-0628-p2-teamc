@@ -1,0 +1,5 @@
+package com.rev.manager;
+
+public class UserManagerImpl {
+
+}

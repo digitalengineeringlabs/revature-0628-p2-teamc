@@ -1,0 +1,8 @@
+package com.rev.model;
+
+import javax.persistence.Entity;
+
+@Entity(name = "userlogin")
+public class User {
+
+}
