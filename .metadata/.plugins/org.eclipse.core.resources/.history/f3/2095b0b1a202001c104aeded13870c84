@@ -1,5 +1,0 @@
-package com.rev.manager;
-
-public interface UserManager {
-
-}

@@ -1,6 +1,0 @@
-package com.rev.model;
-
-@Entity(name = "userlogin")
-public class User {
-
-}

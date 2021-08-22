@@ -1,9 +1,0 @@
-package controller;
-
-
-
-@RestController
-@RequestMapping(path="/users")
-public class UserController {
-
-}
