@@ -1,3 +1,4 @@
+
 package com.rev.model;
 
 import javax.persistence.Column;
