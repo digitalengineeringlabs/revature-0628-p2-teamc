@@ -13,7 +13,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
     @SequenceGenerator(name="id_generator", sequenceName = "userlogin_user_id_seq", allocationSize = 1)
-	
+
 	@Column(name = "user_id")
 	private int userid;
 	
@@ -34,7 +34,14 @@ public class User {
 		this.userpassword = userpassword;
 		this.manager = manager;
 	}
-	
+
+	public User(int userid, String username, String userpassword, boolean manager) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.userpassword = userpassword;
+		this.manager = manager;
+	}
 	
 	
 	public int getUserid() {
