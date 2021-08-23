@@ -1,0 +1,13 @@
+package com.project2.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Project2 {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Project2.class, args);
+	}
+
+}

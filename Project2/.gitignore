@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> first-feature
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -9,9 +13,16 @@ target/
 .classpath
 .factorypath
 .project
+<<<<<<< HEAD
 .settings
 .springBeans
 .sts4-cache
+=======
+.settings/
+.springBeans
+.sts4-cache
+.bin/
+>>>>>>> first-feature
 
 ### IntelliJ IDEA ###
 .idea
@@ -31,3 +42,10 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
+=======
+
+
+.metadata
+.DS_Store
+>>>>>>> first-feature

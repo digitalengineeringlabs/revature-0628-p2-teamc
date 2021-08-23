@@ -1,19 +1,20 @@
-
 package com.rev;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
-import com.rev.dao.UserDAO;
-import com.rev.manager.UserManager;
-import com.rev.model.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.project2.main.dao.UserDAO;
+import com.project2.main.manager.UserManager;
+import com.project2.main.model.User;
 
 @SpringBootTest
 class TestApplicationTests {
@@ -56,5 +57,6 @@ class TestApplicationTests {
 		when(dao.findByUsernameAndUserpassword(user1.getUsername(), user1.getUserpassword())).thenReturn(user1);
 		assertEquals(user1, manager.login(user1.getUsername(), user1.getUserpassword()));
 	}
+
 
 }
