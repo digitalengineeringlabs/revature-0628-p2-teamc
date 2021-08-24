@@ -31,6 +31,7 @@ public class TicketController {
 	public Ticket create(@Valid @RequestBody Ticket t) {
 		return  manager.create(t);
 	}
+	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public Map<String, String> handleValidationExceptions(
@@ -43,6 +44,7 @@ public class TicketController {
 	    });
 	    return errors;
 	}
+	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(ConstraintViolationException.class)
 	public Map<String, String> handleConstraintViolationExceptions(
