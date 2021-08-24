@@ -9,7 +9,7 @@ CREATE TABLE project2.userlogin (
 ALTER TABLE project2.userlogin ADD CONSTRAINT username_un UNIQUE (username);
 
 CREATE TABLE project2.tickets (
-	user_id INT4 NOT NULL,
+	user_id int4 NOT NULL,
 	ticketnumber SERIAL NOT NULL,
 	tickettype VARCHAR NULL,
 	ticketvalue FLOAT8 NULL,
@@ -32,11 +32,16 @@ GRANT ALL ON TABLE project2.tickets TO readwrite;
 GRANT readwrite TO  groupc;
 
 -- populate userlo
-INSERT INTO project2.userlogin (user_id, username, userpassword, manager) 
-	VALUES(1,'testEmp','password',false),
-	(2,'testMgr','password',true);
+insert into project2.userlogin (user_id, username, userpassword, manager) values(1,'testEmp','password',false);
 
 -- Drop tables
 
 -- DROP TABLE project2.userlogin CASCADE;
+<<<<<<< Updated upstream
+-- DROP TABLE project2.status CASCADE;
 -- DROP TABLE project2.tickets;
+
+
+=======
+-- DROP TABLE project2.tickets;
+>>>>>>> Stashed changes
