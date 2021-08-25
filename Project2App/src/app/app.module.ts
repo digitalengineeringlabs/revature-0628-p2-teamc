@@ -22,3 +22,4 @@ const routes: Routes = [
 // @ts-ignore
 export class AppModule {
 }
+
