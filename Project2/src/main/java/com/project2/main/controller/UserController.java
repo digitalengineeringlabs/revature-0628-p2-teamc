@@ -45,7 +45,8 @@ import com.project2.main.model.User;
 		}
 
 		@PostMapping(path="/login", produces="application/json")
-		public User loginUser(@RequestBody User user) throws Exception {
+		public User loginUser(@RequestBody User user){
+//		public User loginUser(@RequestBody User user) throws Exception {
 			String tempUsername = user.getUsername();
 			String tempPassword = user.getUserpassword();
 			User result = null;
@@ -54,10 +55,10 @@ import com.project2.main.model.User;
 				result = manager.login(tempUsername, tempPassword);
 			}
 
-			// You can remove the exception throw and handle it in Angular
-			if(result == null) {
-				throw new Exception("Invalid Login");
-			}
+//			// You can remove the exception throw and handle it in Angular
+//			if(result == null) {
+//				throw new Exception("Invalid Login");
+//			}
 			return result;
 		}
 
