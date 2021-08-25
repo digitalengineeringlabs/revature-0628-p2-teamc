@@ -58,5 +58,4 @@ class TestApplicationTests {
 		assertEquals(user1, manager.login(user1.getUsername(), user1.getUserpassword()));
 	}
 
-
 }
