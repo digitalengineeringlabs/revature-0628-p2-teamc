@@ -39,5 +39,4 @@ INSERT INTO project2.userlogin (user_id, username, userpassword, manager)
 -- Drop tables
 
 -- DROP TABLE project2.userlogin CASCADE;
--- DROP TABLE project2.status CASCADE;
 -- DROP TABLE project2.tickets;
