@@ -3,9 +3,14 @@
     <li *ngFor="let ticket of tickets"
         [class.selected]="ticket === selectedTicket"
         (click)="onSelect(ticket)">
-        <span class="badge">User Id: {{ticket.user_id}}</span>Ticket Type: {{ticket.tickettype}}
+        <a routerLink="/detail/{{ticket.user_id}}">
+            <span class="badge">User Id: {{ticket.user_id}}</span>Ticket Type: {{ticket.tickettype}}
+        </a>
+        
     </li>
 </ul>
+
+<app-ticketassc-details [ticket]="selectedTicket"></app-ticketassc-details>
 
 <div *ngIf="selectedTicket">
 
