@@ -6,12 +6,19 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
+import {Routes, RouterModule} from "@angular/router";
+import {LoginComponent} from "./login/login.component";
+
+const routes: Routes = [
+  {path: '', component: LoginComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     TicketsComponent,
     UsersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +27,10 @@ import { UsersComponent } from './users/users.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
-export class AppModule { }
+
+// @ts-ignore
+export class AppModule {
+}

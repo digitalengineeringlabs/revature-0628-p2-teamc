@@ -19,31 +19,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.project2.main.Project2;
 import com.project2.main.manager.TicketManager;
 import com.project2.main.model.Ticket;
 
 @RestController
 @RequestMapping(path="/ticket")
 public class TicketController {
+	private static final Logger logger=LoggerFactory.getLogger(Project2.class);
 	
 	@Autowired
 	private TicketManager manager;
 	
 	@PostMapping(consumes="application/json", produces="application/json")
 	public Ticket create(@Valid @RequestBody Ticket t) {
+		logger.info("Creating new ticket");
 		return  manager.create(t);
 	}
 
 	//below will be a test
 	@GetMapping(produces = "application/json")
 	public List<Ticket> getAllAssociatedTickets() {
+		logger.info("Getting all tickets ticket");
 		return manager.findAllAssociatedTickets();
 	}
 
 	//when I want to find it by id explicitly 
 	@GetMapping(path = "/{id}", produces="application/json")
 	public List<Ticket> getAllAssociatedTicketsById(@PathVariable int id) {
+		logger.info("Retrieving tickets...");
 		return manager.findAllAssociatedTicketsById(id);
 		
 	}
@@ -51,7 +58,7 @@ public class TicketController {
 	//something here is wrong fix later
 	@GetMapping(path = "/id",produces="application/json")
 	public List<Ticket> getAllAssociatedTicketsById1(@RequestBody int ticketNumber) {
-		
+		logger.info("Retrieving tickets...");
 		return manager.findAllAssociatedTicketsById(ticketNumber);
 		
 	}
@@ -67,6 +74,7 @@ public class TicketController {
 	        String fieldName = ((FieldError) error).getField();
 	        String errorMessage = error.getDefaultMessage();
 	        errors.put(fieldName, errorMessage);
+	        logger.warn("An error has occured: " + errorMessage);
 	    });
 	    return errors;
 	}
@@ -77,6 +85,7 @@ public class TicketController {
 			ConstraintViolationException ex) {
 	    Map<String, String> errors = new HashMap<>();
 	    errors.put("message",ex.getCause().getLocalizedMessage());
+	    logger.warn("An error has occured: " + ex.getCause().getLocalizedMessage());
 	    return errors;
 	}
 	
