@@ -5,11 +5,13 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TicketsComponent
+    TicketsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

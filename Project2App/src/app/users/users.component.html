@@ -1,0 +1,19 @@
+<h3>> Create new user</h3>
+<div>
+    <form class="createUser" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <h1>Create a new User</h1>
+        <label for="username">Username: </label> 
+        <input id="username" type="text" name="username"
+        placeholder="Username" ngModel>
+        <p></p>
+        <label for="password">Password: </label>
+        <input id="password" type = "text" name="password" placeholder="password" ngModel>
+        <p></p>
+        <label for="manager">manager: </label>
+        <input id="manager" type = "checkbox" name="manager" placeholder="manager" ngModel>
+        <p></p>
+        <p></p>
+        <button type="submit">Create user</button>
+    </form>
+
+</div>
