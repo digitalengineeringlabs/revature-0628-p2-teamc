@@ -74,6 +74,7 @@ public class TicketController {
 	        String fieldName = ((FieldError) error).getField();
 	        String errorMessage = error.getDefaultMessage();
 	        errors.put(fieldName, errorMessage);
+	        logger.warn("An error has occured: " + errorMessage);
 	    });
 	    return errors;
 	}
@@ -84,6 +85,7 @@ public class TicketController {
 			ConstraintViolationException ex) {
 	    Map<String, String> errors = new HashMap<>();
 	    errors.put("message",ex.getCause().getLocalizedMessage());
+	    logger.warn("An error has occured: " + ex.getCause().getLocalizedMessage());
 	    return errors;
 	}
 	

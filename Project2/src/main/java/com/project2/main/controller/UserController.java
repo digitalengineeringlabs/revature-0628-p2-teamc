@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project2.main.Project2;
 import com.project2.main.manager.UserManager;
 import com.project2.main.model.User;
 
@@ -28,21 +29,26 @@ import com.project2.main.model.User;
 	@RequestMapping(path="/createuser")
 	public class UserController {
 		
+		private static final Logger logger=LoggerFactory.getLogger(Project2.class);
+		
 		@Autowired
 		private UserManager manager;
 		
 		@PostMapping(consumes="application/json", produces="application/json")
 		public User create( @RequestBody User u){
+			logger.info("Creating new user");
 			return manager.create(u);
 		}
 		
 		@GetMapping(produces="application/json")
 		public List<User> findAll(){
+			logger.info("Collecting user data");
 			return manager.findAll();
 		}
 
 		@GetMapping(path="/{id}", produces="application/json")
 		public User getUser(@PathVariable int id){
+			logger.info("Getting user..");
 			return manager.findById(id);
 		}
 
