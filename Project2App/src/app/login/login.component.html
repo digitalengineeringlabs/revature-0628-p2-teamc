@@ -1,9 +1,12 @@
-<h1>login page!</h1>
+<!--<h1>login page!</h1>-->
 
 <div id="loginPage">
-  <div id="main">
+  <div class="loginForm">
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <h1>Employee Login</h1>
+      <div class="PageName">
+        <h1>Employee Login</h1>
+      </div>
+
       <div *ngIf="invalid === true; else isvalid">Incorrect Email/Password</div>
       <label for="username">Username: </label>
       <input id="username" type="text" name="username" required ngModel>
