@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
           if (data != null) {
             localStorage.setItem("id", data.userid);
             localStorage.setItem("manager", data.manager);
-            //this.router.navigate(['home']);
+            this.router.navigate(['newticket']);
             console.log("Login Worked");
           } else {
             this.invalid = true;
