@@ -4,13 +4,14 @@ import { Router } from '@angular/router';
 import { UsersService } from '../users.service';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+
+  private keepAfterRouteChange = false;
 
   users: Users[] = [];
   user: Users = {
@@ -25,6 +26,7 @@ export class UsersComponent implements OnInit {
               private http:HttpClient) { }
 
               public _url = "http://localhost:8080/createuser"
+              
   ngOnInit(): void {
   }
 
