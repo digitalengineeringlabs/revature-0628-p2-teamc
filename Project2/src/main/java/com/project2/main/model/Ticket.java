@@ -31,7 +31,7 @@ public class Ticket extends Auditable<String>{
 	@Column
 	private Date ticketdate;
 	@Column
-	private String status;
+	private String status = "Pending";
 	
 	public Ticket() {
 		super();
@@ -39,12 +39,10 @@ public class Ticket extends Auditable<String>{
 	
 	public Ticket(int userid, String tickettype, float ticketvalue, String ticketcomments) {
 		super();
-
 		this.userid = userid;
 		this.tickettype = tickettype;
 		this.ticketvalue = ticketvalue;
 		this.ticketcomments = ticketcomments;
-		this.status = "Pending";
 	}
 	public int getUser_id() {
 		return userid;
