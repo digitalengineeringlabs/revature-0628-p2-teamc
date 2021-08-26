@@ -1,0 +1,37 @@
+<h2>My Tickets: Employee Name/Number might go here</h2>
+<ul class="tickets">
+    <li *ngFor="let ticket of tickets"
+        [class.selected]="ticket === selectedTicket"
+        (click)="onSelect(ticket)">
+        <span class="badge">User Id: {{ticket.user_id}}</span>Ticket Type: {{ticket.tickettype}}
+    </li>
+</ul>
+
+<div *ngIf="selectedTicket">
+
+    <h2>{{selectedTicket.user_id}} Details</h2>
+    <div><span>User id: </span>{{selectedTicket.user_id}}</div>
+    <div><span>Ticket Number: </span>{{selectedTicket.ticketnumber}}</div>
+    <div><span>Ticket Type: </span>{{selectedTicket.tickettype}}</div>
+    <div><span>Ticket Value $: </span>{{selectedTicket.ticketvalue}}</div>
+    <div><span>Comments: </span>{{selectedTicket.ticketcomments}}</div>
+    <div><span>Date: </span>{{selectedTicket.ticketdate}}</div>
+    <div><span>Status: </span>{{selectedTicket.ticketstatus}}</div>
+    <div>
+
+    </div>
+</div>
+
+
+
+<!--<h3>{{ticket.tickettype | uppercase}}</h3>
+    could make this employee name
+<div><span>User ID: </span>{{ticket.user_id}}</div>
+<div><span>Ticket Number: </span>{{ticket.ticketnumber}}</div>
+<div><span>Ticket Type: </span>{{ticket.tickettype}}</div>
+<div><span>Ticket Value: </span>{{ticket.ticketvalue}}</div>
+<div><span>Ticket Comments: </span>{{ticket.ticketcomments}}</div>
+<div><span>Ticket Date: </span>{{ticket.ticketdate}}</div>
+<div><span>Ticket Status: </span>{{ticket.ticketstatus}}</div>-->
+
+<!--will now use FormsModule stuff-->
