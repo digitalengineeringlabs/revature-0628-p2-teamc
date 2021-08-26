@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {NgForm} from "@angular/forms";
 import {Route, Router} from "@angular/router";
 
@@ -21,6 +21,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
     console.log(JSON.stringify({username: form.value.username, userpassword: form.value.password}))
     this.http.post(this.loginUrl, {username: form.value.username, userpassword: form.value.password})
       .subscribe({
