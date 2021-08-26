@@ -1,0 +1,20 @@
+*{
+    text-align: center;
+}
+h3 {
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+    color: purple;
+    background-color: lightgray;
+    padding: 0.1em;
+    margin: 0em 19em 0em;
+    border: 2px solid darkred;
+}
+input{
+    color: darkblue;
+}
+span label{
+    color: green;
+}
+
