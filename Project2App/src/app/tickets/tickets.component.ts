@@ -46,7 +46,6 @@ export class TicketsComponent implements OnInit {
           'Content-Type': 'application/json'
         })
       }
-    console.log(form.value.userid)
     console.log(form.value.ticketvalue)
     console.log(form.value.ticketcomment)
     console.log(form.value.tickettype)
