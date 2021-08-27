@@ -34,6 +34,8 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("id", data.userid);
             localStorage.setItem("manager", data.manager);
             this.router.navigate(['newticket']);
+            //this.router.navigate(['dashboard']);
+
             console.log("Login Worked");
           } else {
             this.invalid = true;
