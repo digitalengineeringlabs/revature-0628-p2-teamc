@@ -1,0 +1,22 @@
+<h1>Please Login</h1>
+<p></p>
+<div id="loginPage">
+  <div class="loginForm">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="PageName">
+        <h1>Employee Login</h1>
+      </div>
+
+      <div *ngIf="invalid === true; else isvalid">Incorrect Email/Password</div>
+      <label for="username">Username: </label>
+      <input id="username" type="text" name="username" placeholder= "Username" required ngModel>
+      <br><br>
+      <label for="password">Password: </label>
+      <input id="password" type="password" name="password" placeholder= "Password" required ngModel>
+      <br><br>
+      <button type="submit" [disabled]=!f.valid>Login</button>
+    </form>
+  </div>
+</div>
+
+<ng-template #isvalid><br></ng-template>

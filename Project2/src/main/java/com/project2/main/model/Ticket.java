@@ -32,6 +32,7 @@ public class Ticket extends Auditable<String>{
 	private Date ticketdate;
 	@Column
 	private String ticketstatus;
+	private String status = "Pending";
 	
 	public Ticket() {
 		super();

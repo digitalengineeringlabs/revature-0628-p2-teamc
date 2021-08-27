@@ -1,0 +1,34 @@
+<h3> Please enter information below for new ticket</h3>
+<button (click)="logout()">Lougout</button>
+<div>
+    <form class="createTicket" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <p></p>
+        <h1>Create a new Ticket</h1>
+        <p></p>
+        <label for="ticketvalue">Value: </label>
+        <input id="ticketvalue" type = "text" name="ticketvalue" placeholder="Amount" ngModel>
+        <p></p>
+        <label for="ticketype">Type of Ticket: </label>
+            <div>
+                <span>
+                <input type="radio" id="lodging" name="tickettype" value="lodging" ngModel>
+                <label for="lodging">Lodging</label>
+               
+                <input type="radio" id="travel" name="tickettype" value="travel" ngModel>
+                <label for="travel">Travel</label>
+                
+                <input type="radio" id="food" name="tickettype" value="food" ngModel>
+                <label for="food">Food</label>
+                
+                <input type="radio" id="other" name="tickettype" value="other" ngModel>
+                <label for="other">Other</label>
+                </span>
+            </div>
+            <p></p>
+        <label for="ticketcomment">Comments: </label>
+        <input id ="ticketcomment" type="text" name="ticketcomment" placeholder="Comments" style="width: 500px;" ngModel>
+        <p></p>
+        <button type="submit">Submit New Ticket</button>
+    </form>
+
+</div>
