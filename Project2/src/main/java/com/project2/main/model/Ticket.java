@@ -26,7 +26,6 @@ public class Ticket extends Auditable<String>{
 	private float ticketvalue;
 	@Column
 	private String ticketcomments;
-	
 	@CreatedDate
 	@Column
 	private Date ticketdate;
