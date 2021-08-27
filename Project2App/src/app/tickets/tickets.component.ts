@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Tickets } from '../tickets';
 import { Router } from '@angular/router';
 import { TicketsService } from '../tickets.service';
@@ -14,9 +14,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class TicketsComponent implements OnInit {
 
+
   tickets: Tickets[] = [];
   ticket: Tickets = {
-    userid: 1,
+    userid: 0,
     ticketnumber: 0,
     tickettype: '',
     ticketvalue: 0.0,
@@ -32,8 +33,14 @@ export class TicketsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['login'])
+  }
+
 
   onSubmit(form:NgForm){
+    var loginId = localStorage.getItem("id");
       const httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
@@ -43,9 +50,10 @@ export class TicketsComponent implements OnInit {
     console.log(form.value.ticketvalue)
     console.log(form.value.ticketcomment)
     console.log(form.value.tickettype)
+    console.log(loginId)
     this.http.post(this._url, 
                     JSON.stringify({
-                    user_id: form.value.userid, 
+                    user_id: loginId, 
                     ticketcomments: form.value.ticketcomment,
                     tickettype: form.value.tickettype,
                     ticketvalue: form.value.ticketvalue}),httpOptions

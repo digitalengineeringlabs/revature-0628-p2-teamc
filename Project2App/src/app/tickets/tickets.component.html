@@ -1,11 +1,8 @@
 <h3> Please enter information below for new ticket</h3>
 <div>
     <form class="createTicket" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <p></p>
         <h1>Create a new Ticket</h1>
-        <label for="userid">Employee ID: </label>
-        <input id="userid" type="text" name="userid"
-        placeholder="Employee Number" ngModel>
-        
         <p></p>
         <label for="ticketvalue">Value: </label>
         <input id="ticketvalue" type = "text" name="ticketvalue" placeholder="Amount" ngModel>
@@ -26,6 +23,7 @@
                 <label for="other">Other</label>
                 </span>
             </div>
+            <p></p>
         <label for="ticketcomment">Comments: </label>
         <input id ="ticketcomment" type="text" name="ticketcomment" placeholder="Comments" style="width: 500px;" ngModel>
         <p></p>

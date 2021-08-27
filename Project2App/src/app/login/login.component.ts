@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginUrl = "http://localhost:8080/createuser/login"
   invalid: boolean = false;
+  currentLoginId = 0;
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -34,6 +35,8 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("id", data.userid);
             localStorage.setItem("manager", data.manager);
             this.router.navigate(['newticket']);
+            console.log(localStorage.getItem("id"));
+            this.currentLoginId = data.userid;
             console.log("Login Worked");
           } else {
             this.invalid = true;
