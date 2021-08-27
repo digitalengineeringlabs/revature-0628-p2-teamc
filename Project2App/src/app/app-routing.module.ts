@@ -5,11 +5,11 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { UsersComponent } from './users/users.component';
 import {LoginComponent} from "./login/login.component";
 
-@NgModule({
-  declarations: [],
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+// @NgModule({
+//   declarations: [],
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule]
+// })
 
 
 

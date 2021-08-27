@@ -21,8 +21,9 @@ export class TicketsComponent implements OnInit {
     ticketnumber: 0,
     tickettype: '',
     ticketvalue: 0.0,
-    ticketcomment: ''
-    // status: ''
+    ticketcomment: '',
+    status: '',
+    ticketdate: ''
   }
   
 

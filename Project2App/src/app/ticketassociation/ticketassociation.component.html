@@ -24,7 +24,7 @@
         <td><div *ngFor="let d of data">{{d.user_id}}</div></td>
         <td><div *ngFor="let d of data">{{d.ticketnumber}}</div></td>
         <td><div *ngFor="let d of data">{{d.tickettype}}</div></td>
-        <td><div *ngFor="let d of data">{{d.ticketvalue}}</div></td>
+        <td><div *ngFor="let d of data">{{d.ticketvalue | number: '1.2-2' | currency: 'USD'}}</div></td>
         <td><div *ngFor="let d of data">{{d.ticketcomments}}</div></td>
         <td><div *ngFor="let d of data">{{d.ticketdate | date}}</div></td>
         <td><div *ngFor="let d of data">{{d.status}}</div></td>

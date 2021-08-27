@@ -25,13 +25,11 @@ public class Ticket extends Auditable<String>{
 	@Column
 	private float ticketvalue;
 	@Column
-	private String ticketcomments;
-	
+	private String ticketcomments;	
 	@CreatedDate
 	@Column
 	private Date ticketdate;
 	@Column
-	private String ticketstatus;
 	private String status = "Pending";
 	
 	public Ticket() {
@@ -45,7 +43,7 @@ public class Ticket extends Auditable<String>{
 		this.tickettype = tickettype;
 		this.ticketvalue = ticketvalue;
 		this.ticketcomments = ticketcomments;
-		this.ticketstatus = "Pending";
+		this.status = "Pending";
 	}
 	public int getUser_id() {
 		return userid;
@@ -84,10 +82,10 @@ public class Ticket extends Auditable<String>{
 		this.ticketdate = ticketdate;
 	}
 	public String getStatus() {
-		return ticketstatus;
+		return status;
 	}
 	public void setStatus(String ticketstatus) {
-		this.ticketstatus = ticketstatus;
+		this.status = ticketstatus;
 	}
 	
 	
