@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Data, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 
@@ -23,6 +23,7 @@ export class TicketassociationComponent implements OnInit {
     ticketstatus: ''
   };*/
   data: any=[];//should work
+  selectedData?: Data;
   
   public _url="http://localhost:8080/ticket";
 
@@ -41,6 +42,9 @@ export class TicketassociationComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchTickets();
+  }
+  onSelect(data: Data): void{
+    this.selectedData=data;
   }
 
 }
