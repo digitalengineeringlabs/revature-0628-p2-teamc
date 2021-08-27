@@ -9,10 +9,10 @@
 
       <div *ngIf="invalid === true; else isvalid">Incorrect Email/Password</div>
       <label for="username">Username: </label>
-      <input id="username" type="text" name="username" required ngModel>
+      <input id="username" type="text" name="username" placeholder= "Username" required ngModel>
       <br><br>
       <label for="password">Password: </label>
-      <input id="password" type="password" name="password" required ngModel>
+      <input id="password" type="password" name="password" placeholder= "Password" required ngModel>
       <br><br>
       <button type="submit" [disabled]=!f.valid>Login</button>
     </form>
