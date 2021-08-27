@@ -8,8 +8,12 @@
 </ul>-->
 
 <!---->
-<button (click)="logout()">Lougout</button>
+<nav>
+    <a routerLink="/newticket">Tickets</a>
+</nav>
+<p></p>
 
+<p></p>
 <table>
     <tr>
         <th>User Id</th>
@@ -31,3 +35,5 @@
         <td><div *ngFor="let d of data">{{d.status}}</div></td>
     </tr>
 </table>
+<p></p>
+<button (click)="logout()">Lougout</button>
