@@ -1,5 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+
 body{
   background-color: #219EBC;
+
+}
+*{
+    background-color: #219EBC;
+    text-align: center;
+}
+h3, h1, h2 {
+    display: flex;
+    text-align: center;
+    flex-flow: column;
+    padding: 0.1em;
+    background-color: #8ECAE6;
+    border-radius: 4em;
+    margin: 0em 19em 0em;
+    color: #023047;
+}
+h3{
+    margin: 0em 30em 0em;
+}
+input{
+    color: darkblue;
+    background-color: #8ECAE6;
+}
+span label{
+    background-color: #8ECAE6;
 
 }
