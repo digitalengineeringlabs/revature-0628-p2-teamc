@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 import { TicketassociationComponent } from './ticketassociation/ticketassociation.component';
-const routes: Routes=[
-  {path: 'tickets', component: TicketassociationComponent},
-];
+import { TicketsComponent } from './tickets/tickets.component';
+import { UsersComponent } from './users/users.component';
+import {LoginComponent} from "./login/login.component";
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-=======
-import { TicketsComponent } from './tickets/tickets.component';
-import { UsersComponent } from './users/users.component';
-import {LoginComponent} from "./login/login.component";
+})
+
 
 
 const routes: Routes = [
+  {path: 'tickets', component: TicketassociationComponent},
   {path: 'newticket', component: TicketsComponent},
   {path: 'newuser', component: UsersComponent},
   {path: 'login', component: LoginComponent},
@@ -26,6 +24,5 @@ const routes: Routes = [
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
->>>>>>> main
 })
 export class AppRoutingModule { }
