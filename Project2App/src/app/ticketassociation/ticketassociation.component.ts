@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from '../ticket';
-import { TICKETS } from '../mock-tickets';
-import { TicketasscservService } from '../ticketasscserv.service';
-import { TicketasscmessageService } from '../ticketasscmessage.service';
+import { Tickets } from '../tickets';
+import { HttpClient} from '@angular/common/http';
+import { TicketAsscService } from '../ticket-assc.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-ticketassociation',
@@ -11,25 +12,33 @@ import { TicketasscmessageService } from '../ticketasscmessage.service';
 })
 export class TicketassociationComponent implements OnInit {
 
-  tickets: Ticket[]=[];
-  selectedTicket?: Ticket;
+  title='Associated Tickets'
+  /*tickets: Tickets[]=[];
+  ticket: Tickets={
+    userid:1,
+    ticketnumber:1,
+    ticketype:'',
+    ticketvalue: 0,
+    ticketcomment: '',
+    ticketdate: '',
+    ticketstatus: ''
+  };*/
+  data: any=[];//should work
+  constructor(
+    private router: Router,
+    private ticketasscService: TicketAsscService,
+    private http: HttpClient
+    ) { }
 
-  constructor(private ticketasscservService: TicketasscservService, 
-    private ticketasscmessService: TicketasscmessageService) { }
+    fetchTickets(){
+      this.http.get('http://localhost:8080/Project2/ticket')
+        .subscribe(data => {
+          this.data.push(data);
+          console.log(this.data);
+        },error=>console.error(error));
+    }
 
   ngOnInit(): void {
-    this.getTickets();
-  }
-
-  getTickets(): void {
-    this.ticketasscservService.getTickets()
-      .subscribe(tickets => this.tickets = tickets);
-  }
-
-  onSelect(ticket: Ticket): void{
-    this.selectedTicket=ticket;
-    this.ticketasscmessService.add(`TicketAssociationComponent:
-    Selected user id=${ticket.user_id}`);
   }
 
 }

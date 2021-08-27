@@ -1,9 +1,9 @@
-export interface Ticket {
-    user_id: number;
+export interface Tickets{
+    userid: number;
     ticketnumber: number;
-    tickettype: string;
+    ticketype: string;
     ticketvalue: number;
-    ticketcomments: string;
+    ticketcomment: string;
     ticketdate: string;
     ticketstatus: string;
 }
