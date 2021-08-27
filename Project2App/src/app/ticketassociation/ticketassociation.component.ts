@@ -46,5 +46,9 @@ export class TicketassociationComponent implements OnInit {
   onSelect(data: Data): void{
     this.selectedData=data;
   }
+  logout(){
+    localStorage.clear()
+    this.router.navigate(['login'])
+  }
 
 }
