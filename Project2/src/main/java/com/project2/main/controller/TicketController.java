@@ -57,6 +57,9 @@ public class TicketController {
 
 	//something here is wrong fix later
 	@GetMapping(path = "/id",produces="application/json")
+	public List<Ticket> getAllAssociatedTicketsById1(@RequestBody int ticketnumber) {
+		
+		return manager.findAllAssociatedTicketsById(ticketnumber);
 	public List<Ticket> getAllAssociatedTicketsById1(@RequestBody int ticketNumber) {
 		logger.info("Retrieving tickets...");
 		return manager.findAllAssociatedTicketsById(ticketNumber);
