@@ -1,16 +1,8 @@
 <h2>My Tickets</h2>
-<!--<div><span>User Id: </span>{{ticket.userid}}</div>
-<div><span>Ticket Number: </span>{{ticket.ticketnumber}}</div>
-<div><span>Type: </span>{{ticket.ticketype}}</div>
-<div><span>Value ($): </span>{{ticket.ticketvalue}}</div>
-<div><span>Comments: </span>{{ticket.ticketcomment}}</div>
-<div><span>Date: </span>{{ticket.ticketdate}}</div>
-<div><span>Status: </span>{{ticket.ticketstatus}}</div>-->
 
 <table>
     <tr>
         <th>User Id</th>
-        <br>
         <th>Ticket Number</th>
         <th>Ticket Type</th>
         <th>Ticket Value</th>
@@ -19,13 +11,13 @@
         <th>Ticket Status</th>
     </tr>
 
-    <tr *ngFor="let mydata of data[0]">
-        <td>{{mydata.userid}}</td>
-        <td>{{mydata.ticketnumber}}</td>
-        <td>{{mydata.ticketype}}</td>
-        <td>{{mydata.ticketvalue}}</td>
-        <td>{{mydata.ticketcomment}}</td>
-        <td>{{mydata.ticketdate}}</td>
-        <td>{{mydata.ticketstatus}}</td>
+    <tr>
+        <td><div *ngFor="let d of data">{{d.user_id}}</div></td>
+        <td><div *ngFor="let d of data">{{d.ticketnumber}}</div></td>
+        <td><div *ngFor="let d of data">{{d.tickettype}}</div></td>
+        <td><div *ngFor="let d of data">{{d.ticketvalue}}</div></td>
+        <td><div *ngFor="let d of data">{{d.ticketcomments}}</div></td>
+        <td><div *ngFor="let d of data">{{d.ticketdate | date}}</div></td>
+        <td><div *ngFor="let d of data">{{d.status}}</div></td>
     </tr>
 </table>

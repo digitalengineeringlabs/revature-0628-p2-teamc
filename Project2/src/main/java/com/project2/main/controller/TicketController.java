@@ -50,9 +50,9 @@ public class TicketController {
 
 	//something here is wrong fix later
 	@GetMapping(path = "/id",produces="application/json")
-	public List<Ticket> getAllAssociatedTicketsById1(@RequestBody int ticketNumber) {
+	public List<Ticket> getAllAssociatedTicketsById1(@RequestBody int ticketnumber) {
 		
-		return manager.findAllAssociatedTicketsById(ticketNumber);
+		return manager.findAllAssociatedTicketsById(ticketnumber);
 		
 	}
 

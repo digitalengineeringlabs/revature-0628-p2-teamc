@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tickets } from '../tickets';
 import { HttpClient} from '@angular/common/http';
-import { TicketAsscService } from '../ticket-assc.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -24,21 +23,24 @@ export class TicketassociationComponent implements OnInit {
     ticketstatus: ''
   };*/
   data: any=[];//should work
+  
+  public _url="http://localhost:8080/ticket";
+
   constructor(
     private router: Router,
-    private ticketasscService: TicketAsscService,
     private http: HttpClient
-    ) { }
+  ){ }
 
     fetchTickets(){
-      this.http.get('http://localhost:8080/Project2/ticket')
+      this.http.get(this._url)
         .subscribe(data => {
-          this.data.push(data);
-          console.log(this.data);
+          console.log(data);
+          this.data=data;
         },error=>console.error(error));
     }
 
   ngOnInit(): void {
+    this.fetchTickets();
   }
 
 }

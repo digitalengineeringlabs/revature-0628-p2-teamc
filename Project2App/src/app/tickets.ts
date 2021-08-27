@@ -1,7 +1,7 @@
 export interface Tickets{
     userid: number;
     ticketnumber: number;
-    ticketype: string;
+    tickettype: string;
     ticketvalue: number;
     ticketcomment: string;
     ticketdate: string;
